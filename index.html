@@ -19,7 +19,7 @@
 
 
 
-<body>
+<body onload="getOffsetDate()">
 	<style>
 		*{
 			font-family: Arial, Helvetica, sans-serif;
@@ -94,13 +94,19 @@
 			header .navi{
 				display: none;
 			}
+			.introduce {
+				width: 90% !important;
+			}
 		}
 		@media only screen and (max-height: 400px) {
 			.top-video .content{
 				bottom:0;
 			}
 			.top-video .content h1{
-				font-size: 50px;
+				font-size: 40px;
+			}
+			.top-video .content a{
+				font-size: 18px;
 			}
 		}
 		@media only screen and (min-height: 400px) {
@@ -137,19 +143,32 @@
 		.announcements .content-box{
 			width: 250px;
 			height: 250px;
+			border: black solid 2px;
 			border-radius: 10px;
 			background-color: lightgray;
-			margin: 0px 5px;
-			padding: 0px 20px;
+			margin: 0px 3px;
+			padding: 0px 10px;
 			flex: 0 0 auto;
+			display: flex;
+			flex-direction: column;
 		}
 		.announcements .content-box .readmore{
-			width: 100%;
+			width: 90px;
 			background-color: rgb(24, 64, 196);
+			padding: 4px;
+			border-radius: 5px;
+			font-size: 15px;
 			color: white;
 		}
 
 	</style>
+
+
+
+
+
+
+	<!--Top navigation bar-->
 	<header style="display: flex; flex-direction: row; background-color: black; color: white; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">
 		<img src="./resources/Logo.png" height="80%" style="align-self: center; margin-left: 10px;">
 		<h2 class="title" style="justify-self: flex-start; margin-left: 10px;"><b>YJJ City Site</b></h2>
@@ -170,33 +189,108 @@
 		</div>
 	</header>
 
+	<!--Video-->
 	<div class="top-video" style="height: 90vh; background-color: black;">
 		<div style="height: 100%; overflow: hidden;">
 			<video autoplay muted loop id="myVideo" style="height: 100%; transform: translateX(-50%) ; margin:0 50%;">
 				<source src="./resources/top-video.mp4" type="video/mp4">
 				Your browser does not support HTML5 video.
-			  </video>
+			</video>
 			  
-			  <div class="content">
-				<h1><b>Welcome to the YJJ City Site!</b></h1>
-			  </div>
+			<div class="content">
+				<h1 class="top-welcome"><b>Welcome to the YJJ City Site!</b></h1>
+				<h2 class="yc-time" id="yc-time" style="color: rgb(172, 172, 172);"></h2>
+			</div>
+
+
+			<!--Clock script-->
+			<script>
+				function getOffsetDate() {
+					var offsetInMintues = -480;
+					// Get local date object
+					var d = new Date();
+					// Add local time zone offset to get UTC and 
+					// Subtract offset to get desired zone
+					d.setMinutes(d.getMinutes() + d.getTimezoneOffset() - offsetInMintues);
+					var h=d.getHours();
+					var m=d.getMinutes();
+					var s=d.getSeconds();
+					var amorpm = checkAMorPM(h);
+					h = checkTime(h);
+					h=onetwosys(h);
+					m = checkTime(m);
+					s = checkTime(s);
+					var out = "<b>It is "+h+":"+m+":"+s+" "+amorpm+" in YJJ City (GMT+8)</b>";
+					document.getElementById("yc-time").innerHTML = out;
+					var t = setTimeout(getOffsetDate, 500);
+				}
+				function checkTime(i) {
+					if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+					return i;
+				}
+				function onetwosys(j) {
+					if (j > 12) {j = j-12};  // add zero in front of numbers < 10
+					return j;
+				}
+				function checkAMorPM(hr) {
+					if (hr > 12) {out="PM"} else {out="AM"};  // add zero in front of numbers < 10
+					return out;
+				}
+				
+			</script>
 		</div>
 	</div>
 
 
 
 	<div class="main" style="margin-left:8px; margin-right: 8px; margin-top: 10px; display: flex; flex-direction: column;">
-		<a href="" style="align-self: center; text-decoration: none; font-size: 20px; color: black; background-color: lightgray; padding: 5px; border-radius: 10px;">New to YJJ City? Let me introduce our community to you!</a>
+		
+		<!--Intro for new players-->
+		<a class="introduce" href="" style="display:flex; flex-direction: row; width: 500px; align-self: center; text-decoration: none; font-size: 20px; color: black; background-color: lightgray; padding: 5px; border-radius: 10px;">
+			<video autoplay muted loop id="myVideo" style="width:80px; height: 110px; border-radius: 10px;">
+				<source src="./resources/YJJ_Wave.mp4" type="video/mp4">
+				Your browser does not support HTML5 video.
+			</video>
+			<p style="margin-left: 10px; align-self: center; font-size: 24px;"><b>New to YJJ City? Let me introduce our community to you!</b></p>
+		</a>
 
+		
+		<!--Announcements/News section
+
+			Default layout:
+			<div class="content-box important-box" style="width: 250px;">
+				<h2><b>Website Construction</b></h2>
+				<h4>I am currently building the YJJ City Website. Stay tuned for more info!</h4>
+				<p><em>Posted on 2 Feb 2020</em></p>
+				<a href="#" class="readmore" style="text-decoration: none; font-weight: bold;">Read More</a>
+			</div>
+		
+		-->
 		<div style="width: 100%; background-color: rgb(236, 236, 236); border-radius:10px; padding: 1px 20px;">
-			<h2><b>Latest Announcements</b></h2>
+			
+			<h2><b>Latest Announcements, News & Events</b></h2>
+
 			<div style="position: relative; display: flex; flex-direction: row; overflow: scroll; flex-wrap: none; overflow-x: scroll;" class="announcements">
+				<!--Arrange from top as latest-->
+				<div class="content-box notice-box" style="width: 250px;">
+					<h2><b>YJJ City Applications Form</b></h2>
+					<h4>YJJ City Applications Forms are now open!</h4>
+					<p><em>Posted on 2 Feb 2020</em></p>
+				</div>
 				<div class="content-box important-box" style="width: 250px;">
 					<h2><b>Website Construction</b></h2>
 					<h4>I am currently building the YJJ City Website. Stay tuned for more info!</h4>
+					<p><em>Posted on 2 Feb 2020</em></p>
 				</div>
 			</div>
 		</div>
-    </div>
+	</div>
+	
+	<footer style="width: 100%; background-color: black; color: white; padding: 10px; display: flex; flex-direction: row;">
+		<div style="display: flex; flex-direction: column;">
+			<h4>Site made by YJJcoolcool.</h4>
+			<h4>View the source code here: <a href="https://github.com/YJJcoolcool/yjjcitysite" target="_blank">https://github.com/YJJcoolcool/yjjcitysite</a></h4>
+		</div>
+	</footer>
 </body>
 </html>
