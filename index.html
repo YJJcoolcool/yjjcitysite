@@ -23,10 +23,22 @@
 	<style>
 		*{
 			font-family: Arial, Helvetica, sans-serif;
+			padding: 0;
+			margin:0;
 		}
 
 		a{
 			text-decoration: none;
+		}
+		
+		.important-box {
+			background-color: rgb(204, 16, 16) !important;
+			color: white !important;
+		}
+
+		.notice-box {
+			background-color:rgb(252, 230, 35) !important;
+			color: black !important;
 		}
 
 		.navi:hover{
@@ -62,7 +74,7 @@
 		position: absolute;
 		right: 0;
 		background-color: #4b4b4b;
-		min-width: 160px;
+		min-width: 250px;
 		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
 		z-index: 1;
 		}
@@ -83,22 +95,56 @@
 				display: none;
 			}
 		}
+		@media only screen and (max-height: 400px) {
+			.top-video .content{
+				bottom:0;
+			}
+			.top-video .content h1{
+				font-size: 50px;
+			}
+		}
+		@media only screen and (min-height: 400px) {
+			.top-video .content{
+				bottom:10%;
+			}
+			.top-video .content h1{
+				font-size: 60px;
+			}
+		}
 		@media only screen and (min-width: 850px) {
 			header .dropdown{
 				display: none;
 			}
+			.top-video .content{
+				margin-left:20px;
+			}
 		}
 		.top-video .content {
 		position: absolute;
-		bottom: 250px;
 		color: #f1f1f1;
-		width: 100%;
+		width: 80%;
 		padding: 20px;
 		text-shadow:-1px -1px 0 #000,
 		1px -1px 0 #000,
 		-1px 1px 0 #000,
 		1px 1px 0 #000;
 		}
+
+		.announcements .content-box{
+			width: 250px;
+			height: 250px;
+			border-radius: 10px;
+			background-color: lightgray;
+			margin: 0px 5px;
+			padding: 0px 20px;
+			flex: 0 0 auto;
+		}
+		.announcements .content-box .readmore{
+			width: 100%;
+			background-color: rgb(24, 64, 196);
+			color: white;
+		}
+
 	</style>
 	<header style="display: flex; flex-direction: row; background-color: black; color: white; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">
 		<img src="./resources/Logo.png" height="80%" style="align-self: center; margin-left: 10px;">
@@ -110,7 +156,7 @@
 		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:500px; font-size: 25px;"><a href="#" target="" style="color:yellow; text-decoration: none;">Home</a></h2>
 		<div class="dropdown" style="margin-top: 10px; position:absolute; right: 15px; float:right; width:50px;">
 			<button class="dropbtn";><img style="max-width: 100%; display: block;" src="https://upload.wikimedia.org/wikipedia/commons/thumb/b/b2/Hamburger_icon.svg/1024px-Hamburger_icon.svg.png"></button>
-			<div class="dropdown-content">
+			<div class="dropdown-content" style="font-size: 20px;">
 				<a href="#" target="" style="color:yellow; text-decoration: none;">Home</a>
 				<a href="#" target="" style="color:white; text-decoration: none;">Info</a>
 				<a href="https://discord.gg/FyhB9qP" target="" style="color:white; text-decoration: none;">Our Story</a>
@@ -120,7 +166,7 @@
 		</div>
 	</header>
 
-	<div class="top-video" style="height: 90vh; background-color: lightgray;">
+	<div class="top-video" style="height: 90vh; background-color: black;">
 		<div style="height: 100%; overflow: hidden;">
 			<video autoplay muted loop id="myVideo" style="height: 100%; transform: translateX(-50%) ; margin:0 50%;">
 				<source src="./resources/top-video.mp4" type="video/mp4">
@@ -128,12 +174,20 @@
 			  </video>
 			  
 			  <div class="content">
-				<h1 style="font-size: 60px;"><b>Welcome to the YJJ City Site!</b></h1>
+				<h1><b>Welcome to the YJJ City Site!</b></h1>
 			  </div>
 		</div>
 	</div>
-	<div id="main" style="margin-left:5px;">
-	        <h2><b>Latest Announcements</b></h2>
-        </div>
+	<div id="main" style="margin-left:8px; margin-right: 8px; margin-top: 10px;">
+		<div style="width: 100%; background-color: rgb(236, 236, 236); border-radius:10px; padding: 1px 20px;">
+			<h2><b>Latest Announcements</b></h2>
+			<div style="position: relative; display: flex; flex-direction: row; overflow: scroll; flex-wrap: none; overflow-x: scroll;" class="announcements">
+				<div class="content-box important-box" style="width: 250px;">
+					<h2><b>Website Construction</b></h2>
+					<h4>I am currently building the YJJ City Website. Stay tuned for more info!</h4>
+				</div>
+			</div>
+		</div>
+    </div>
 </body>
 </html>
