@@ -1,160 +1,32 @@
-body {
-	padding: 0px;
-	margin: 0px;
-	background-color: white;
+body{padding:0px;margin:0px;background-color:white;}
+*{margin:0;padding:0;font-family:Arial, Helvetica, sans-serif;}
+header{background-color:rgb(10,10,10);height:80px;color:white;margin:0px;padding:1px;vertical-align:middle;text-align:center;height:70px;display:block;}
+h1{font-size:40px;}
+.arial{font-family:Arial;}
+.button{background-color:yellow;color:black;font-weight:bold;border-color:#aaa;border-width:2px;border-style:solid;border-radius:10px;box-shadow:5px 10px 5px rgba(100,100,100,0.3);}
+#heading-title{font-family:Arial;font-weight:bold;position:absolute;top:10px;left:100px;transition:color 0.5s;}
+#heading-title:hover{color:yellow;}
+#option{color:white;transition:color 0.5s;}
+#option:hover{color:yellow;}
+@keyframes ipanimate{0%{color:linear-gradient}
+8%{color:orange}
+22%{color:yellow}
+40%{color:lime}
+60%{color:cyan}
+80%{color:magenta}
+100%{color:red}
 }
-
-*{
-	margin: 0;
-	padding: 0;
-	font-family: Arial, Helvetica, sans-serif;
-}
-
-header {
-	background-color: rgb(10,10,10);
-	height: 80px;
-	color: white;
-	margin: 0px;
-	padding: 1px;
-	vertical-align: middle;
-	text-align: center;
-	height: 70px;
-	display:block;
-}
-
-h1{
-	font-size:40px;
-}
-.arial{
-	font-family: Arial;
-}
-
-.button {
-	background-color: yellow;
-	color: black;
-	font-weight: bold;
-	border-color: #aaa;
-	border-width: 2px;
-	border-style: solid;
-	border-radius: 10px;
-	box-shadow: 5px 10px 5px rgba(100,100,100,0.3);
-}
-
-
-#heading-title{
-	font-family: Arial;
-	font-weight: bold;
-	position: absolute;
-	top:10px;
-	left: 100px;
-	transition: color 0.5s;
-}
-
-#heading-title:hover {
-	color:yellow;
-}
-
-#option{
-	color: white;
-	transition: color 0.5s;
-}
-
-#option:hover{
-	color: yellow;
-}
-
-@keyframes ipanimate{
-	0% {color: linear-gradient}
-	8% {color: orange}
-	22% {color: yellow}
-	40% {color: lime}
-	60% {color: cyan}
-	80% {color: magenta}
-	100% {color: red}
-}
-#iptab {
-	padding-top: 3px;
-	font-family: Arial;
-	text-align: center;
-}
-
-#ip {
-	color: white;
-	height: 1.2em;
-	transition: color 0.5s;
-	margin-top: 20px;
-	font-size: 20px;
-	text-align: center;
-	background-color: transparent;
-	transition: color 0.5s, font-size 0.5s, background-color 0.8s, width 0.8s;
-}
-#ip:hover {
-	font-size: 26px;
-	color:black;
-	background-color: #FFFF00;
-	/*animation-name: ipanimate;
-	animation-duration: 5s;
-	animation-delay: 0.5s;
-	animation-iteration-count: infinite;*/
-}
-
-#map {
-	color: white;
-	transition: color 0.5s;
-	padding-top: 15px;
-	font-size: 20px;
-	text-align: right;
-}
-
-.fullscreen-banner{
-	height: 100%
-	background-repeat: no-repeat;
-	background-color: rgb(240,240,50);
-	text-align: center;
-}
-
-.dropbtn {
-  background-color: transparent;
-  color: white;
-  font-size: 18px;
-  border: none;
-}
-
-.dropdown-content {
-  display: none;
-  position: absolute;
-  background-color: #f1f1f1;
-  min-width: 130px;
-  z-index: 1;
-}
-
-.dropdown-content a {
-  color: black;
-  padding: 10px 10px;
-  text-decoration: none;
-  display: block;
-}
-
-.dropdown-content a:hover {background-color: #ddd;}
-
-.dropdown:hover .dropdown-content {display: block;}
-
-
-
-#title {
-	font-family: Arial;
-	font-size: 40px;
-	text-align: center;
-}
-
-#subtitle {
-	font-family: Arial;
-	font-size: 30px;
-	text-align: center;
-}
-
-#version-info {
-	font-family: Arial;
-	font-size: 12px;
-	text-align: center;
-}
+#iptab{padding-top:3px;font-family:Arial;text-align:center;}
+#ip{color:white;height:1.2em;transition:color 0.5s;margin-top:20px;font-size:20px;text-align:center;background-color:transparent;transition:color 0.5s, font-size 0.5s, background-color 0.8s, width 0.8s;}
+#ip:hover{font-size:26px;color:black;background-color:#FFFF00;}
+#map{color:white;transition:color 0.5s;padding-top:15px;font-size:20px;text-align:right;}
+.fullscreen-banner{height:100%
+background-repeat:no-repeat;background-color:rgb(240,240,50);text-align:center;}
+.dropbtn{background-color:transparent;color:white;font-size:18px;border:none;}
+.dropdown-content{display:none;position:absolute;background-color:#f1f1f1;min-width:130px;z-index:1;}
+.dropdown-content a{color:black;padding:10px 10px;text-decoration:none;display:block;}
+.dropdown-content a:hover{background-color:#ddd;}
+.dropdown:hover .dropdown-content{display:block;}
+#title{font-family:Arial;font-size:40px;text-align:center;}
+#subtitle{font-family:Arial;font-size:30px;text-align:center;}
+#version-info{font-family:Arial;font-size:12px;text-align:center;}
