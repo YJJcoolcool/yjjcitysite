@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+	<title>Our Story - YJJ City Site</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="The story of how YJJ City began.">
+	<meta name="keywords" content="YJJ City,yjjcity,yjj city,yc,city,yj city,YJ City,YJJ CITY,jjy ytic,JJY YTIC,Jjy Ytic,WolvHaven,Wolvhaven,wolvhaven,yjj,yjjcoolcool,limaru,limaru city server,yjj city youtube">
+	<meta name="author" content="YJJcoolcool">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="/resources/Logo.png"/> <!--Favicon-->
+	<link rel="stylesheet" type="text/css" href="/style.css"> <!--Link to CSS sheet-->
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+	<style>
+		*{
+			font-family: Arial, Helvetica, sans-serif;
+			padding: 0;
+			margin:0;
+		}
+
+		a{
+			text-decoration: none !important;
+		}
+
+		.navi:hover{
+			font-weight: bold;
+		}
+
+		header .title{
+			color: white;
+			transition: color 0.3s;
+		}
+		header .title:hover{
+			color: yellow;
+		}
+
+		.dropbtn {
+		background-color: white;
+		color: white;
+		padding: 16px;
+		font-size: 16px;
+		border: none;
+		cursor: pointer;
+		border: none;
+		border-radius: 20%;
+		}
+
+		.dropdown {
+		position: relative;
+		display: inline-block;
+		}
+
+		.dropdown-content {
+		display: none;
+		position: absolute;
+		right: 0;
+		background-color: #4b4b4b;
+		min-width: 250px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+		}
+
+		.dropdown-content a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+		}
+
+		.dropdown-content a:hover {background-color: #272727;}
+		.dropdown:active .dropdown-content {display: block;}
+		.dropdown:active .dropbtn {background-color: lightgray;}
+
+		@media only screen and (max-width: 850px) {
+			header .navi{
+				display: none;
+			}
+            .info-box{
+                width: 90% !important;
+            }
+		}
+		@media only screen and (min-width: 850px) {
+			header .dropdown{
+				display: none;
+			}
+		}
+
+		.main div{
+			margin-top: 10px !important;
+		}
+
+	</style>
+</head>
+<body>
+    <!--Top navigation bar-->
+	<header style="display: flex; flex-direction: row; background-color: black; color: white; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">
+		<img src="/resources/Logo.png" height="80%" style="align-self: center; margin-left: 10px;">
+		<h2 class="title" style="justify-self: flex-start; margin-left: 10px;"><b>YJJ City Site</b></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:15px; font-size: 25px;"><a href="https://discord.gg/FyhB9qP" target="_blank"style="color:#7289DA;">Discord</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:120px; font-size: 25px;"><a href="http://yjjcity.ddns.net:8123" target="_blank" style="color:#76F013;">Dynamic Map</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:295px; font-size: 25px;"><a href="/our-story" target="" style="color:white;">Our Story</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:430px; font-size: 25px;"><a href="/info" target="" style="color:yellow;">Info</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:500px; font-size: 25px;"><a href="/" target="" style="color:white;">Home</a></h2>
+		<div class="dropdown" style="margin-top: 10px; position:absolute; right: 15px; float:right; width:50px;">
+			<button class="dropbtn";><img style="max-width: 100%; display: block;" src="/resources/hamburger.png"></button>
+			<div class="dropdown-content" style="font-size: 20px;">
+				<a href="/" target="" style="color:white;">Home</a>
+				<a href="/info" target="" style="color:yellow;">Info</a>
+				<a href="/our-story/" target="" style="color:white;">Our Story</a>
+				<a href="http://yjjcity.ddns.net:8123" target="_blank" style="color:#76F013;">Dynamic Map</a>
+				<a href="https://discord.gg/FyhB9qP" target="_blank"style="color:#7289DA;">Discord</a>
+			</div>
+		</div>
+    </header>
+
+	<div class="main" style="display: flex; flex-direction: column; background-color: #8A2517; color: white;">
+		<style>
+			.main h1{font-weight: bold; align-self: center; font-size: 56px;}
+			.main h2{font-weight: bold; align-self: center; font-size: 34px;}
+			.main h3{align-self: center; font-size: 24px;}
+			.main p{align-self: flex-start; font-size: 18px; font-family: "Open Sans",sans-serif; padding:10px 10%;}
+			.main .main-point{display: flex; flex-direction: column; background-color: yellow; color: black; padding: 15px;}
+
+			@media only screen and (max-width: 600px) {
+				.main h1{font-size: 38px !important; padding-top:10px !important;}
+				.subtitle{padding-bottom: 30px !important;}
+				.main h2{font-size: 28px !important;}
+				.main h3{font-size: 20px !important;}
+				.main .main-point{display: flex; flex-direction: column; background-color: yellow; color: black; padding: 5px; !important}
+			}
+		</style>
+		<h1 style="padding-top:20px;">The YJJ City Story</h1>
+		<h3 class="subtitle" style="padding-bottom: 50px; margin: 0px 20px;">Find out how YJJ City all began, including some Major Events that happened on the server.</h3>
+		<div class="main-point">
+			<h2 style="align-self: flex-start; padding-left: 10%;">Before YJJ City</h2>
+		</div>
+		<br>
+		<p>YJJ City, although officially started on August 29, 2018, had a long history before that. When YJJcoolcool first played Minecraft, he was inspired by the endless possibilities of it. From building basic houses, he thought maybe he could build something bigger, more majestic, a community.</p>
+		<br>
+		<p>He had a friend, Mineshafter61, and they thought of that idea, and Mineshafter61 said, "I think that's great!". From then, they started building their city in Minecraft: Pocket Edition. They built small towns and villages, and since they liked trains, wanted to make a metro system. That was the beginning of YJJ City.</p>
+		<br>
+		<p>During those years, YJJ City was still a young idea. Mineshafter built his own version of YJJ City, YJJ built his, and things were not so worked out yet. YJJ still did not have the idea of making a big server yet.</p>
+		<br>
+		<p>YJJ got his inspiration from many places. He played on Lifeboat (MCPE minigame server) and Hypixel, and was inspired to make minigames too. But the biggest inspiration for both YJJ and Mineshafter was from WolvHaven, a Minecraft community which was also a server (YJJ was banned from driving trains after failing the test 2 times).</p>
+		<br>
+		<p>But having played on many many servers, YJJ found out that many servers showed a very difficult environment to go around in, with new players not knowing what are the full possibilities in each server. YJJ wanted to make a server that people could explore, but also not have the feeling of being left out by everyone else who had came before and feeling scared that they would be lost. He also wanted to make a community</p>
+		<p>As such, he decided that he wanted to build a community.</p>
+		<div class="main-point">
+			<h2 style="align-self: flex-start; padding-left: 10%;">29 August 2018 (Founding of YJJ City)</h2>
+			<h3 style="align-self: flex-start; padding-left: 10%; font-weight: bold; font-style: italic;">YJJ City Version: August/September 2018</h3>
+		</div>
+		<br>
+		<p>YJJ City Started off as a Minehut server created by Mineshafter61. The very first people working on the first few editions of YJJ City were YJJ and Mineshafter themselves, and along with YJJ's classmate, Falvader (Username: PhaelVerdor) and a few other people who joined from the Minehut lobby, some of which are still loyal members of the server today, such as Solutional. (Some names are forgotten, apologies if your name is not included) It started with a flat world, and with a few plugins Mineshafter added. But the server was not interesting, by the very least. There were only a few houses, and everything was all over the place.</p>
+		<div class="main-point">
+			<h2 style="align-self: flex-start; padding-left: 10%;">September/October 2018</h2>
+			<h3 style="align-self: flex-start; padding-left: 10%; font-weight: bold; font-style: italic;">YJJ City Version: Multiple, never recorded.</h3>
+		</div>
+		<br>
+		<p>Over the course of these two months, the server was constantly griefed and the YJJ City community had to frequently restart. But slowly, by the end of October, YJJ City had developed into a more organised place, and had higher security and protection. A sort of building system appeared, and everything looked much neater and better. By this time, development was also picking up its pace and a monthly video series of the developments in the city was created. (Which is still available on the YJJ City Youtube today!)</p>
+		<div class="main-point">
+			<h2 style="align-self: flex-start; padding-left: 10%;">End 2018 - June 2019</h2>
+			<h3 style="align-self: flex-start; padding-left: 10%; font-weight: bold; font-style: italic;">YJJ City Version: YJJ City 2018</h3>
+		</div>
+		<br>
+		<p>Development in YJJ City was booming in this stage. At some points in this period, multiple people would join the community (not server!) a day. Every week, new buildings popped up. At its peak, YJJ City had 100 Members, and a few hundred unique players ever joined the server.</p>
+		<br>
+		<p>In December, a big airport terminal was built. Lots of train lines were being built. And in June 2019, YJJ City had officially been hosted on a dedicated server. (It was terrible at first. Lots of crashes and problems.)</p>
+		<div class="main-point">
+			<h2 style="align-self: flex-start; padding-left: 10%;">4 July 2019 (YJJ City Seperation)</h2>
+			<h3 style="align-self: flex-start; padding-left: 10%; font-weight: bold; font-style: italic;">YJJ City Version: Nil</h3>
+		</div>
+		<br>
+		<p>July, and the months to come, was a rough period for YJJ City.</p>
+		<br>
+		<p>On 4 July 2019, YJJ decided that the country system was ridiculous and the leaders of the countries Mineshafter61 and panas_d were teaming up against him to overthrow him in having the highest power of the server. From there, YJJ City broke away and decided it would make a new world and create a new YJJ City. Mineshafter61 and panas_d however, took hold of the YJJ City world [now officially known as YJJ City (2018)], and made their own server, Limaru, and broke apart from YJJ City.</p>
+		<br>
+		<p>Of course, tensions were very high and Mineshafter61 did attack the server occasionally, but YJJ ignored his actions as, learning from the past, going further would bring no good. Eventually, Mineshafter61 left the server completely. <b>(Don't worry, Mineshafter is still in good ties with YJJ today.)</b></p>
+		<br>
+		<p>With the chaos that was happening and the inability of YJJ to manage the server due to Major Exams coming up, the community took a downfall, losing players every month. Promises were made to make new things for YJJ City but most of them didn't come.</p>
+		<div class="main-point">
+			<h2 style="align-self: flex-start; padding-left: 10%;">November/December 2019</h2>
+			<h3 style="align-self: flex-start; padding-left: 10%; font-weight: bold; font-style: italic;">YJJ City Version: Nil</h3>
+		</div>
+		<br>
+		<p>With Major Exams finally over, YJJ jumped back into action to revive YJJ City. Plans for a redesigned world and server were announced. Eventually, the new world was to be named YJJ City 2020.</p>
+		<div class="main-point">
+			<h2 style="align-self: flex-start; padding-left: 10%;">January 2020 - Present</h2>
+			<h3 style="align-self: flex-start; padding-left: 10%; font-weight: bold; font-style: italic;">YJJ City Version: YJJ City 2020</h3>
+		</div>
+		<br>
+		<p>This year, we celebrate a new decade and a new start for YJJ City.</p>
+		<br>
+		<p>A new world was created for YJJ City, a 3km by 3km world with a large island. Development started on the mountainside beside the lake, now called Sun Moon Lake.</p>
+		<p>A spawn building was made, and a Cable Car going up the mountain was made later on, the cars taking several days to complete.</p>
+		<p>A Train System Map was then published (you can view it in the Train System Map under the Info tab), and work began on what is now the Lake Loop Line. After nearly a month of works, the Lake Loop Line is now nearly completed.</p>
+		<br>
+		<p><i>Beyond this, the story is yours to write...</i></p>
+
+    </div>
+</body>
+</html>
