@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+	<title>Info - YJJ City Site</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="View the catalouge of YJJ City Information.">
+	<meta name="keywords" content="YJJ City,yjjcity,yjj city,yc,city,yj city,YJ City,YJJ CITY,jjy ytic,JJY YTIC,Jjy Ytic,WolvHaven,Wolvhaven,wolvhaven,yjj,yjjcoolcool,limaru,limaru city server,yjj city youtube">
+	<meta name="author" content="YJJcoolcool">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="/resources/Logo.png"/> <!--Favicon-->
+    <link rel="stylesheet" type="text/css" href="/style.css"> <!--Link to CSS sheet-->
+	<style>
+		*{
+			font-family: Arial, Helvetica, sans-serif;
+			padding: 0;
+			margin:0;
+		}
+
+		a{
+			text-decoration: none !important;
+		}
+
+		.navi:hover{
+			font-weight: bold;
+		}
+
+		header .title{
+			color: white;
+			transition: color 0.3s;
+		}
+		header .title:hover{
+			color: yellow;
+		}
+
+		.dropbtn {
+		background-color: white;
+		color: white;
+		padding: 16px;
+		font-size: 16px;
+		border: none;
+		cursor: pointer;
+		border: none;
+		border-radius: 20%;
+		}
+
+		.dropdown {
+		position: relative;
+		display: inline-block;
+		}
+
+		.dropdown-content {
+		display: none;
+		position: absolute;
+		right: 0;
+		background-color: #4b4b4b;
+		min-width: 250px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+		}
+
+		.dropdown-content a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+		}
+
+		.dropdown-content a:hover {background-color: #272727;}
+		.dropdown:active .dropdown-content {display: block;}
+		.dropdown:active .dropbtn {background-color: lightgray;}
+
+		@media only screen and (max-width: 850px) {
+			header .navi{
+				display: none;
+			}
+            .info-box{
+                width: 90% !important;
+            }
+		}
+		@media only screen and (min-width: 850px) {
+			header .dropdown{
+				display: none;
+			}
+		}
+
+		.main div{
+			margin-top: 10px !important;
+		}
+
+	</style>
+</head>
+<body>
+    <!--Top navigation bar-->
+	<header style="display: flex; flex-direction: row; background-color: black; color: white; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">
+		<img src="/resources/Logo.png" height="80%" style="align-self: center; margin-left: 10px;">
+		<h2 class="title" style="justify-self: flex-start; margin-left: 10px;"><b>YJJ City Site</b></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:15px; font-size: 25px;"><a href="https://discord.gg/FyhB9qP" target="_blank"style="color:#7289DA;">Discord</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:120px; font-size: 25px;"><a href="http://yjjcity.ddns.net:8123" target="_blank" style="color:#76F013;">Dynamic Map</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:295px; font-size: 25px;"><a href="/our-story" target="" style="color:white;">Our Story</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:430px; font-size: 25px;"><a href="/info" target="" style="color:yellow;">Info</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:500px; font-size: 25px;"><a href="/" target="" style="color:white;">Home</a></h2>
+		<div class="dropdown" style="margin-top: 10px; position:absolute; right: 15px; float:right; width:50px;">
+			<button class="dropbtn";><img style="max-width: 100%; display: block;" src="/resources/hamburger.png"></button>
+			<div class="dropdown-content" style="font-size: 20px;">
+				<a href="/" target="" style="color:white;">Home</a>
+				<a href="/info" target="" style="color:yellow;">Info</a>
+				<a href="/our-story/" target="" style="color:white;">Our Story</a>
+				<a href="http://yjjcity.ddns.net:8123" target="_blank" style="color:#76F013;">Dynamic Map</a>
+				<a href="https://discord.gg/FyhB9qP" target="_blank"style="color:#7289DA;">Discord</a>
+			</div>
+		</div>
+    </header>
+
+    <div class="main" style="display: flex; flex-direction: row; width: 100%; margin: 10px 10px;">
+    <style>.main h2{font-weight: bold;} .main a{border-radius: 5px; padding: 5px 5px; font-size: 18px; background-color: gray; color: white; transition: background-color 0.3s;} .main a:hover{background-color: rgb(83, 83, 83);}</style>
+        <div class="info-box" style="display: flex; flex-direction: column; background-color: lightgray; border-radius: 10px; width: 30%; padding: 0px 15px; padding-bottom:10px;">
+            <h2>Transport</h2>
+            <a href="/info/trainmap">Train System Map</a>
+        </div>
+    </div>
+</body>
+</html>

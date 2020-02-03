@@ -20,21 +20,6 @@
 		a{
 			text-decoration: none;
 		}
-		
-		.important-box {
-			background-color: rgb(204, 16, 16) !important;
-			color: white !important;
-		}
-
-		.notice-box {
-			background-color:rgb(252, 230, 35) !important;
-			color: black !important;
-		}
-
-		.events-box {
-			background-color:rgb(102, 13, 218) !important;
-			color: white !important;
-		}
 
 		.navi:hover{
 			font-weight: bold;
@@ -89,73 +74,15 @@
 			header .navi{
 				display: none;
 			}
-			.introduce {
-				width: 90% !important;
-			}
-		}
-		@media only screen and (max-height: 400px) {
-			.top-video .content{
-				bottom:0;
-			}
-			.top-video .content h1{
-				font-size: 40px;
-			}
-			.top-video .content h2{
-				font-size: 18px;
-			}
-			.top-video .content a{
-				font-size: 18px;
-			}
-		}
-		@media only screen and (min-height: 400px) {
-			.top-video .content{
-				bottom:10%;
-			}
-			.top-video .content h1{
-				font-size: 60px;
-			}
 		}
 		@media only screen and (min-width: 850px) {
 			header .dropdown{
 				display: none;
 			}
-			.top-video .content{
-				margin-left:20px;
-			}
-		}
-		.top-video .content {
-		position: absolute;
-		color: #f1f1f1;
-		width: 80%;
-		padding: 20px;
-		text-shadow:-1px -1px 0 #000,
-		1px -1px 0 #000,
-		-1px 1px 0 #000,
-		1px 1px 0 #000;
 		}
 
 		.main div{
 			margin-top: 10px !important;
-		}
-
-		.announcements .content-box{
-			width: 250px;
-			height: 250px;
-			border: black solid 2px;
-			border-radius: 10px;
-			background-color: lightgray;
-			margin: 0px 3px;
-			padding: 0px 10px;
-			flex: 0 0 auto;
-			display: flex;
-			flex-direction: column;
-		}
-		.announcements .content-box .readmore{
-			background-color: rgb(24, 64, 196);
-			padding: 4px;
-			border-radius: 5px;
-			font-size: 15px;
-			color: white;
 		}
 
 	</style>
@@ -163,19 +90,19 @@
 <body>
     <!--Top navigation bar-->
 	<header style="display: flex; flex-direction: row; background-color: black; color: white; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">
-		<img src="http://yjjcity.ddns.net/resources/Logo.png" height="80%" style="align-self: center; margin-left: 10px;">
+		<img src="/resources/Logo.png" height="80%" style="align-self: center; margin-left: 10px;">
 		<h2 class="title" style="justify-self: flex-start; margin-left: 10px;"><b>YJJ City Site</b></h2>
 		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:15px; font-size: 25px;"><a href="https://discord.gg/FyhB9qP" target="_blank"style="color:#7289DA; text-decoration: none;">Discord</a></h2>
 		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:120px; font-size: 25px;"><a href="http://yjjcity.ddns.net:8123" target="_blank" style="color:#76F013; text-decoration: none;">Dynamic Map</a></h2>
-		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:295px; font-size: 25px;"><a href="#" target="" style="color:white; text-decoration: none;">Our Story</a></h2>
-		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:430px; font-size: 25px;"><a href="#" target="" style="color:yellow; text-decoration: none;">Info</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:295px; font-size: 25px;"><a href="/our-story" target="" style="color:white; text-decoration: none;">Our Story</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:430px; font-size: 25px;"><a href="/info" target="" style="color:yellow; text-decoration: none;">Info</a></h2>
 		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:500px; font-size: 25px;"><a href="/" target="" style="color:white; text-decoration: none;">Home</a></h2>
 		<div class="dropdown" style="margin-top: 10px; position:absolute; right: 15px; float:right; width:50px;">
 			<button class="dropbtn";><img style="max-width: 100%; display: block;" src="/resources/hamburger.png"></button>
 			<div class="dropdown-content" style="font-size: 20px;">
 				<a href="/" target="" style="color:white; text-decoration: none;">Home</a>
-				<a href="#" target="" style="color:yellow; text-decoration: none;">Info</a>
-				<a href="https://discord.gg/FyhB9qP" target="" style="color:white; text-decoration: none;">Our Story</a>
+				<a href="/info" target="" style="color:yellow; text-decoration: none;">Info</a>
+				<a href="/our-story" target="" style="color:white; text-decoration: none;">Our Story</a>
 				<a href="http://yjjcity.ddns.net:8123" target="_blank" style="color:#76F013; text-decoration: none;">Dynamic Map</a>
 				<a href="https://discord.gg/FyhB9qP" target="_blank"style="color:#7289DA; text-decoration: none;">Discord</a>
 			</div>
