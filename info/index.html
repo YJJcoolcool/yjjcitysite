@@ -112,12 +112,27 @@
 		</div>
     </header>
 
-    <div class="main" style="display: flex; flex-direction: row; margin: 10px 10px;">
-    <style>.main h2{font-weight: bold;} .main a{border-radius: 5px; padding: 5px 5px; font-size: 18px; background-color: gray; color: white; transition: background-color 0.3s;} .main a:hover{background-color: rgb(83, 83, 83);}</style>
-        <div class="info-box" style="display: flex; flex-direction: column; background-color: lightgray; border-radius: 10px; width: 30%; padding: 0px 15px; padding-bottom:10px;">
-            <h2>Transport</h2>
-            <a href="/info/trainmap">Train System Map</a>
-        </div>
-    </div>
+    <div class="main" style="display: flex; flex-direction: column; background-color: #8A2517; color: white;">
+		<style>
+			.main h1{font-weight: bold; align-self: center; font-size: 56px;}
+			.main h2{font-weight: bold; align-self: center; font-size: 34px;}
+			.main h3{align-self: center; font-size: 24px;}
+			.main p{align-self: flex-start; font-size: 18px; font-family: "Open Sans",sans-serif; padding:10px 10%;}
+			.main .main-point{display: flex; flex-direction: column; background-color: yellow; color: black; padding: 15px;}
+
+			@media only screen and (max-width: 600px) {
+				.main h1{font-size: 38px !important; padding-top:10px !important;}
+				.subtitle{padding-bottom: 30px !important;}
+				.main h2{font-size: 28px !important;}
+				.main h3{font-size: 20px !important;}
+				.main .main-point{display: flex; flex-direction: column; background-color: yellow; color: black; padding: 5px !important;}
+			}
+		</style>
+		<h1 style="padding-top:20px;">The YJJ City Story</h1>
+		<h3 class="subtitle" style="padding-bottom: 50px; margin: 0px 20px;">Find out how YJJ City all began, including some Major Events that happened on the server.</h3>
+		<div class="main-point">
+			<h2 style="align-self: flex-start; padding-left: 10%;">Before YJJ City</h2>
+		</div>
+	</div>
 </body>
 </html>
