@@ -101,6 +101,20 @@
 			.introduce {
 				width: 90% !important;
 			}
+			.videos {
+				flex-direction: column !important;
+			}
+
+			.videos iframe{
+				width: 100% !important;
+				height: 400px !important;
+			}
+		}
+		@media only screen and (max-width: 600px) {
+			.videos iframe{
+				width: 100% !important;
+				height: 250px !important;
+			}
 		}
 		@media only screen and (max-height: 500px) {
 			.top-video .content{
@@ -115,6 +129,7 @@
 			.top-video .content a{
 				font-size: 18px;
 			}
+			
 		}
 		@media only screen and (min-height: 500px) {
 			.top-video .content{
@@ -139,12 +154,18 @@
 		padding: 20px;
 		}
 		.top-video .content h1{
-			-webkit-text-stroke-width: 2px;
-  			-webkit-text-stroke-color: black;
+			text-shadow:
+			-1px -1px 0 #000,
+			1px -1px 0 #000,
+			-1px 1px 0 #000,
+			1px 1px 0 #000;
 		}
 		.top-video .content h2{
-			-webkit-text-stroke-width: 1.5px;
-  			-webkit-text-stroke-color: black;
+			text-shadow:
+			-1px -1px 0 #000,
+			1px -1px 0 #000,
+			-1px 1px 0 #000,
+			1px 1px 0 #000;
 		}
 
 		.main div{
@@ -305,9 +326,31 @@
 				</div>
 			</div>
 		</div>
+		<div style="width: 100%; background-color: rgb(236, 236, 236); border-radius:10px; padding: 1px 20px;">
+			
+			<h2><b>Quick Links</b></h2>
+
+			<div style="position: relative; display: flex; flex-direction: row; overflow: scroll; flex-wrap: none; overflow-x: scroll;" class="announcements">
+				<!--Arrange from top as latest-->
+				<div class="content-box" style="width: 250px;">
+					<h2><b>YJJ City Applications Form</b></h2>
+					<h4>Form for all YJJ City Applications.</h4>
+					<a href="https://forms.gle/HoQwXw51DyMgYbpU8" target="_blank" class="readmore" style="font-weight: bold;">View the Form</a>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div style="padding: 5px 20px 30px 20px; background-color: rgb(219, 0, 0);">
+		<h2 style="font-weight: bold; color: white;">Latest Videos from YJJ City Project</h2>
+		<div class="videos" style="width: 100%; background-color: rgb(236, 236, 236); border-radius:10px; padding: 5px 10px; display: flex; flex-direction: row; overflow: scroll;">
+			<iframe width="560" height="315" style="margin: 5px 5px; border-radius: 15px; flex: 0 0 auto;" src="https://www.youtube.com/embed/7W_8sb8bePo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe width="560" height="315" style="margin: 5px 5px; border-radius: 15px; flex: 0 0 auto;" src="https://www.youtube.com/embed/w0Flwnt4Rw0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe width="560" height="315" style="margin: 5px 5px; border-radius: 15px; flex: 0 0 auto;" src="https://www.youtube.com/embed/efSyA16PGXQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
 	</div>
 	
-	<footer style="margin-top:15px; width: 100%; background-color: black; color: white; padding: 10px; display: flex; flex-direction: row;">
+	<footer style="margin-top:15px; width: 100%; background-color: black; color: white; padding: 10px; position: relative; display: flex; flex-direction: row; flex-wrap: none; overflow-x: scroll;">
 		<div style="display: flex; flex-direction: column;">
 			<h4>Site made by YJJcoolcool.</h4>
 			<h4>View the source code, or contribute to the site here: <a href="https://github.com/YJJcoolcool/yjjcitysite" target="_blank">https://github.com/YJJcoolcool/yjjcitysite</a></h4>
