@@ -14,7 +14,7 @@
 
 	<!--Google Adsense-->
 	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-	<script data-ad-client="ca-pub-3072463091965275" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js/"></script>
+	<script sync data-ad-client="ca-pub-3072463091965275" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js/"></script>
 </head>
 
 
@@ -197,7 +197,7 @@
 
 	</style>
 
-	<script>
+	<script async>
 		function copyIP(){
 			var copyText = document.querySelector("#input");
 			copyText.select();
@@ -207,6 +207,38 @@
 				document.getElementById("serverIP").innerHTML = "Server IP: yjjcity.ddns.net";
 			}, 1500);
 		}
+
+		function getOffsetDate() {
+					var offsetInMintues = -480;
+					// Get local date object
+					var d = new Date();
+					// Add local time zone offset to get UTC and 
+					// Subtract offset to get desired zone
+					d.setMinutes(d.getMinutes() + d.getTimezoneOffset() - offsetInMintues);
+					var h=d.getHours();
+					var m=d.getMinutes();
+					var s=d.getSeconds();
+					var amorpm = checkAMorPM(h);
+					h = checkTime(h);
+					h=onetwosys(h);
+					m = checkTime(m);
+					s = checkTime(s);
+					var out = "<b>It is "+h+":"+m+":"+s+" "+amorpm+" in YJJ City (GMT+8)</b>";
+					document.getElementById("yc-time").innerHTML = out;
+					var t = setTimeout(getOffsetDate, 500);
+				}
+				function checkTime(i) {
+					if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+					return i;
+				}
+				function onetwosys(j) {
+					if (j > 12) {j = j-12};  // add zero in front of numbers < 10
+					return j;
+				}
+				function checkAMorPM(hr) {
+					if (hr > 12) {out="PM"} else {out="AM"};  // add zero in front of numbers < 10
+					return out;
+				}
 	</script>
 	
 
@@ -249,46 +281,6 @@
 				<input id="input" type="text" value="yjjcity.ddns.net" style="display: none;"/>
 				<h2 style="color: rgb(255, 255, 255);"><button onclick="copyIP()" style="background: none;" id="serverIP">Server IP: yjjcity.ddns.net</button><p style="font-size: 15px;">(Click to copy!)</p></h2>
 			</div>
-			
-
-			
-
-
-			<!--Clock script-->
-			<script>
-				function getOffsetDate() {
-					var offsetInMintues = -480;
-					// Get local date object
-					var d = new Date();
-					// Add local time zone offset to get UTC and 
-					// Subtract offset to get desired zone
-					d.setMinutes(d.getMinutes() + d.getTimezoneOffset() - offsetInMintues);
-					var h=d.getHours();
-					var m=d.getMinutes();
-					var s=d.getSeconds();
-					var amorpm = checkAMorPM(h);
-					h = checkTime(h);
-					h=onetwosys(h);
-					m = checkTime(m);
-					s = checkTime(s);
-					var out = "<b>It is "+h+":"+m+":"+s+" "+amorpm+" in YJJ City (GMT+8)</b>";
-					document.getElementById("yc-time").innerHTML = out;
-					var t = setTimeout(getOffsetDate, 500);
-				}
-				function checkTime(i) {
-					if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
-					return i;
-				}
-				function onetwosys(j) {
-					if (j > 12) {j = j-12};  // add zero in front of numbers < 10
-					return j;
-				}
-				function checkAMorPM(hr) {
-					if (hr > 12) {out="PM"} else {out="AM"};  // add zero in front of numbers < 10
-					return out;
-				}
-				
-			</script>
 		</div>
 	</div>
 
