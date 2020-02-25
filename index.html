@@ -108,6 +108,7 @@
 			.videos iframe{
 				width: 100% !important;
 				height: 400px !important;
+				align-self: center;
 			}
 		}
 		@media only screen and (max-width: 600px) {
@@ -194,6 +195,8 @@
 			font-size: 15px;
 			color: white;
 		}
+
+		
 
 	</style>
 
@@ -321,6 +324,11 @@
 
 			<div style="position: relative; display: flex; flex-direction: row; overflow: scroll; flex-wrap: none; overflow-x: scroll;" class="announcements">
 				<!--Arrange from top as latest-->
+				<div class="content-box events-box" style="width: 250px;">
+					<h2><b>Lake Loop Line Showcase</b></h2>
+					<h4>Watch our Lake Loop Line Showcase in 4K 360 with Shaders!</h4>
+					<p><em>Posted on 25 Feb 2020</em></p>
+				</div>
 				<div class="content-box notice-box" style="width: 250px;">
 					<h2><b>Suffocation in wall in first join</b></h2>
 					<h4>We have fixed the issue. New players no loger spawn in the ground. Spawn has been moved to the Visitor Centre.</h4>
@@ -373,10 +381,10 @@
 	<!--Videos from YJJ City Project-->
 	<div style="padding: 5px 10px 30px 20px; margin:10px 0px; background-color: rgb(219, 0, 0);">
 		<h2 style="font-weight: bold; color: white;">Latest Videos from YJJ City Project</h2>
-		<div class="videos" style="width: 100%; background-color: rgb(236, 236, 236); border-radius:10px; padding: 5px 5px; display: flex; flex-direction: row; overflow: scroll;">
+		<div class="videos" id="youtubevids" style="width: 100%; background-color: rgb(236, 236, 236); border-radius:10px; padding: 5px 5px; display: flex; flex-direction: row; overflow: scroll;">
+			<iframe width="560" height="315" style="margin: 5px 5px; border-radius: 15px; flex: 0 0 auto;" src="https://youtube.com/embed/5BLEuhAiVqk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe width="560" height="315" style="margin: 5px 5px; border-radius: 15px; flex: 0 0 auto;" src="https://youtube.com/embed/_rU6AIRZgFs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			<iframe width="560" height="315" style="margin: 5px 5px; border-radius: 15px; flex: 0 0 auto;" src="https://www.youtube.com/embed/7W_8sb8bePo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			<iframe width="560" height="315" style="margin: 5px 5px; border-radius: 15px; flex: 0 0 auto;" src="https://www.youtube.com/embed/w0Flwnt4Rw0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			<iframe width="560" height="315" style="margin: 5px 5px; border-radius: 15px; flex: 0 0 auto;" src="https://www.youtube.com/embed/efSyA16PGXQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 		</div>
 	</div>
 	
