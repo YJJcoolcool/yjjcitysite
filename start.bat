@@ -1,6 +1,7 @@
 CD /D "%~dp0"
-git commit -a -m Added stuff
+:start
+git commit -a -m Stuff
 git push origin master
 git fetch origin
 git pull origin master
-@pause
+goto start
