@@ -116,13 +116,6 @@
 				width: 100% !important;
 				height: 250px !important;
 			}
-			.top-video .content h1{
-				font-size: 30px !important;
-			}
-			.top-video .content h2{
-				font-size: 18px !important;
-			}
-
 		}
 		@media only screen and (max-height: 500px) {
 			.top-video .content{
@@ -152,13 +145,14 @@
 				display: none;
 			}
 			.top-video .content{
-				padding-left:50px;
+				margin-left:20px;
 			}
 		}
 		.top-video .content {
 		position: absolute;
 		color: #f1f1f1;
-		padding: 5px 10px;
+		width: 80%;
+		padding: 5px;
 		}
 		.top-video .content h1{
 			text-shadow:
@@ -284,9 +278,9 @@
 				Your browser does not support HTML5 video.
 			</video>
 			  
-			<div class="content" style="background-color: rgba(0,0,0,0.5);">
+			<div class="content">
 				<h1 class="top-welcome"><b>Welcome to the YJJ City Site!</b></h1>
-				<h2 id="yc-ping" style="color: rgb(255, 255, 255);">YJJ City is ONLINE!</h2>
+				<h2 id="yc-ping" style="color: rgb(255, 255, 255);"></h2>
 				<h2 class="yc-time" id="yc-time" style="color: rgb(255, 255, 255);"></h2>
 				<input id="input" type="text" value="yjjcity.ddns.net" style="display: none;"/>
 				<h2 style="color: rgb(255, 255, 255);"><button onclick="copyIP()" style="background: none; text-align: left;" id="serverIP">Server IP: yjjcity.ddns.net</button><p style="font-size: 15px;">(Click to copy!)</p></h2>
@@ -406,5 +400,3 @@
 	</footer>
 </body>
 </html>
-
-
