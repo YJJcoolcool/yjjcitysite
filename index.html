@@ -171,4 +171,1887 @@
 			text-shadow:
 			-1px -1px 0 #000,
 			1px -1px 0 #000,
-			-1px 1px 0
+			-1px 1px 0 #000,
+			1px 1px 0 #000;
+			border: none;
+		}
+
+
+
+		.main div{
+			margin-top: 10px !important;
+		}
+
+		.announcements .content-box{
+			width: 250px;
+			height: 250px;
+			border: black solid 2px;
+			border-radius: 10px;
+			background-color: lightgray;
+			margin: 0px 3px;
+			padding: 0px 10px;
+			flex: 0 0 auto;
+			display: flex;
+			flex-direction: column;
+		}
+		.announcements .content-box .readmore{
+			background-color: rgb(24, 64, 196);
+			padding: 4px;
+			border-radius: 5px;
+			font-size: 15px;
+			color: white;
+		}
+
+		
+
+	</style>
+
+	<script async>
+		function copyIP(){
+			var copyText = document.querySelector("#input");
+			copyText.select();
+			document.execCommand("copy");
+			document.getElementById("serverIP").innerHTML = "<p style='color:lime; font-size:30px; margin:0; padding:0;'>Copied IP to clipboard!</p>";
+			setTimeout(function(){
+				document.getElementById("serverIP").innerHTML = "Server IP: yjjcity.ddns.net";
+			}, 1500);
+		}
+
+		function getOffsetDate() {
+					var offsetInMintues = -480;
+					// Get local date object
+					var d = new Date();
+					// Add local time zone offset to get UTC and 
+					// Subtract offset to get desired zone
+					d.setMinutes(d.getMinutes() + d.getTimezoneOffset() - offsetInMintues);
+					var h=d.getHours();
+					var m=d.getMinutes();
+					var s=d.getSeconds();
+					var amorpm = checkAMorPM(h);
+					h = checkTime(h);
+					h=onetwosys(h);
+					m = checkTime(m);
+					s = checkTime(s);
+					var out = "<b>It is "+h+":"+m+":"+s+" "+amorpm+" in YJJ City (GMT+8)</b>";
+					document.getElementById("yc-time").innerHTML = out;
+					var t = setTimeout(getOffsetDate, 500);
+				}
+				function checkTime(i) {
+					if (i < 10) {i = "0" + i};  // add zero in front of numbers < 10
+					return i;
+				}
+				function onetwosys(j) {
+					if (j > 12) {j = j-12};  // add zero in front of numbers < 10
+					return j;
+				}
+				function checkAMorPM(hr) {
+					if (hr > 12) {out="PM"} else {out="AM"};  // add zero in front of numbers < 10
+					return out;
+				}
+	</script>
+	
+
+
+
+
+
+	<!--Top navigation bar-->
+	<header style="display: flex; flex-direction: row; background-color: black; color: white; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">
+		<a href="/" style="align-self: center; margin-left: 10px;"><img src="/resources/Logo.png" width="48px" height="48px" ></a>
+		<a href="/"><h2 class="title" style="justify-self: flex-start; margin-left: 10px;"><b>YJJ City Site</b></h2></a>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:15px; font-size: 25px;"><a href="https://discord.gg/FyhB9qP" target="_blank"style="color:#7289DA;">Discord</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:120px; font-size: 25px;"><a href="/dynmap" style="color:#76F013; ">Dynamic Map</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:295px; font-size: 25px;"><a href="/our-story" target="" style="color:white;;">Our Story</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:430px; font-size: 25px;"><a href="/info" target="" style="color:white;;">Info</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:500px; font-size: 25px;"><a href="/" target="" style="color:yellow;;">Home</a></h2>
+		<div class="dropdown" style="margin-top: 10px; position:absolute; right: 15px; float:right; width:50px;">
+			<button class="dropbtn";><img style="max-width: 100%; display: block;" src="/resources/hamburger.png"></button>
+			<div class="dropdown-content" style="font-size: 20px;">
+				<a href="/" target="" style="color:yellow;;">Home</a>
+				<a href="/info" target="" style="color:white;;">Info</a>
+				<a href="/our-story" target="" style="color:white;;">Our Story</a>
+				<a href="/dynmap" style="color:#76F013;;">Dynamic Map</a>
+				<a href="https://discord.gg/FyhB9qP" target="_blank"style="color:#7289DA;;">Discord</a>
+			</div>
+		</div>
+	</header>
+
+	<!--Video-->
+	<div class="top-video" style="height: 90vh; background-color: black;">
+		<div style="height: 100%; overflow: hidden;">
+			<video autoplay muted loop id="myVideo" style="height: 100%; transform: translateX(-50%) ; margin:0 50%;">
+				<source src="./resources/top-video.mp4" type="video/mp4">
+				Your browser does not support HTML5 video.
+			</video>
+			  
+			<div class="content" style="background-color: rgba(0,0,0,0.5);">
+				<h1 class="top-welcome"><b>Welcome to the YJJ City Site!</b></h1>
+				<h2 id="yc-ping" style="color: rgb(255, 255, 255);">YJJ City is ONLINE!</h2>
+				<h2 class="yc-time" id="yc-time" style="color: rgb(255, 255, 255);"></h2>
+				<input id="input" type="text" value="yjjcity.ddns.net" style="display: none;"/>
+				<h2 style="color: rgb(255, 255, 255);"><button onclick="copyIP()" style="background: none; text-align: left;" id="serverIP">Server IP: yjjcity.ddns.net</button><p style="font-size: 15px;">(Click to copy!)</p></h2>
+			</div>
+		</div>
+	</div>
+
+
+
+	<div class="main" style="margin-left:8px; margin-right: 8px; margin-top: 10px; display: flex; flex-direction: column;">
+		
+		<!--Intro for new players-->
+		<a class="introduce" href="/info/welcome" style="display:flex; flex-direction: row; width: 500px; align-self: center; font-size: 20px; color: black; background-color: lightgray; padding: 5px; border-radius: 10px;">
+			<video autoplay muted loop id="myVideo" style="width:80px; height: 110px; border-radius: 10px;">
+				<source src="./resources/YJJ_Wave.mp4" type="video/mp4">
+				Your browser does not support HTML5 video.
+			</video>
+			<p style="margin-left: 10px; align-self: center; font-size: 24px;"><b>New to YJJ City? Let me introduce our community to you!</b></p>
+		</a>
+
+		
+
+
+
+
+
+		<!--Announcements/News section
+			Default layout:
+			<div class="content-box important-box" style="width: 250px;">
+				<h2><b>Website Construction</b></h2>
+				<h4>I am currently building the YJJ City Website. Stay tuned for more info!</h4>
+				<p><em>Posted on 2 Feb 2020</em></p>
+				<a href="#" class="readmore" style="text-decoration: none; font-weight: bold;">Read More</a>
+			</div>
+		
+		-->
+
+
+		<div style="width: 100%; background-color: rgb(236, 236, 236); border-radius:10px; padding: 1px 20px 10px 20px;">
+			
+			<h2 style="display: flex; align-items: center;"><image src="https://cdn.pixabay.com/photo/2015/12/16/17/41/bell-1096279_960_720.png" style="width: 35px; margin-right: 10px;"/><b>Latest Announcements, News & Events</b></h2>
+
+			<div style="position: relative; display: flex; flex-direction: row; overflow: scroll; flex-wrap: none; overflow-x: scroll;" class="announcements">
+				<!--Arrange from top as latest-->
+				<div class="content-box events-box" style="width: 250px;">
+					<h2><b>Lake Loop Line Showcase</b></h2>
+					<h4>Watch our Lake Loop Line Showcase in 4K 360 with Shaders!</h4>
+					<p><em>Posted on 25 Feb 2020</em></p>
+				</div>
+				<div class="content-box notice-box" style="width: 250px;">
+					<h2><b>Suffocation in wall in first join</b></h2>
+					<h4>We have fixed the issue. New players no loger spawn in the ground. Spawn has been moved to the Visitor Centre.</h4>
+					<p><em>Posted on 12 Feb 2020</em></p>
+				</div>
+				<div class="content-box notice-box" style="width: 250px;">
+					<h2><b>Suffocation in wall in first join</b></h2>
+					<h4>We are looking into the issue. Please bear with us while we find a solution to the problem.</h4>
+					<p><em>Posted on 3 Feb 2020</em></p>
+				</div>
+				<div class="content-box notice-box" style="width: 250px;">
+					<h2><b>YJJ City Applications Form</b></h2>
+					<h4>YJJ City Applications Forms are now open!</h4>
+					<a href="https://forms.gle/HoQwXw51DyMgYbpU8" target="_blank" class="readmore" style="font-weight: bold;">View the Form</a>
+					<p><em>Posted on 2 Feb 2020</em></p>
+				</div>
+				<div class="content-box important-box" style="width: 250px;">
+					<h2><b>Website Construction</b></h2>
+					<h4>I am currently building the YJJ City Website. Stay tuned for more info!</h4>
+					<p><em>Posted on 2 Feb 2020</em></p>
+				</div>
+				<div class="content-box events-box" style="width: 250px;">
+					<h2><b>YJJ City 2020</b></h2>
+					<h4>Today marks a new start for YJJ City!</h4>
+					<p><em>Posted on 1 Jan 2020</em></p>
+				</div>
+			</div>
+		</div>
+
+
+
+		<!--Links-->
+		<div style="width: 100%; background-color: rgb(236, 236, 236); border-radius:10px; padding: 1px 20px 10px 20px;">
+			
+			<h2 style="display: flex; align-items: center;"><image src="./resources/hyperlink.png" style="width: 35px; margin-right: 10px;"/><b>Quick Links</b></h2>
+
+			<div style="position: relative; display: flex; flex-direction: row; overflow: scroll; flex-wrap: none; overflow-x: scroll;" class="announcements">
+				<!--Arrange from top as latest-->
+				<div class="content-box" style="width: 250px;">
+					<h2><b>YJJ City Applications Form</b></h2>
+					<h4>Form for all YJJ City Applications.</h4>
+					<a href="https://forms.gle/HoQwXw51DyMgYbpU8" target="_blank" class="readmore" style="font-weight: bold;">View the Form</a>
+				</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+	<!--Videos from YJJ City Project-->
+	<div style="padding: 5px 10px 30px 20px; margin:10px 0px; background-color: rgb(219, 0, 0);">
+		<h2 style="font-weight: bold; color: white;">Latest Videos from YJJ City Project</h2>
+		<a href="https://www.youtube.com/channel/UCwrTn_ZR2yjRZrdtlzfYs2A" target="_blankw" style="background-color: white; display: inline; border-radius: 10px; padding:5px; font-size: 20px; color: red; align-items: center;">Visit our YouTube channel!<image src="./resources/youtubelogo.png" style="width: 30px; margin:0 5px;"/></a>
+		<div class="videos" id="youtubevids" style="width: 100%; background-color: rgb(236, 236, 236); border-radius:10px; padding: 5px 5px; display: flex; flex-direction: row; overflow: scroll; margin-top: 10px;">
+			<iframe width="560" height="315" style="margin: 5px 5px; border-radius: 15px; flex: 0 0 auto;" src="https://www.youtube.com/embed/kC25apP4nxk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe width="560" height="315" style="margin: 5px 5px; border-radius: 15px; flex: 0 0 auto;" src="https://www.youtube.com/embed/UGte3fDjyMI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe width="560" height="315" style="margin: 5px 5px; border-radius: 15px; flex: 0 0 auto;" src="https://youtube.com/embed/5BLEuhAiVqk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe width="560" height="315" style="margin: 5px 5px; border-radius: 15px; flex: 0 0 auto;" src="https://youtube.com/embed/_rU6AIRZgFs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<iframe width="560" height="315" style="margin: 5px 5px; border-radius: 15px; flex: 0 0 auto;" src="https://www.youtube.com/embed/7W_8sb8bePo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+		</div>
+	</div>
+	
+	<footer style="margin-top:15px; width: 100%; background-color: black; color: white; padding: 10px; position: relative; display: flex; flex-direction: row; flex-wrap: none; overflow-x: scroll;">
+		<div style="display: flex; flex-direction: column;">
+			<h4>Site made by YJJcoolcool.</h4>
+			<h4>View the source code, or contribute to the site here: <a href="https://github.com/YJJcoolcool/yjjcitysite" target="_blank">https://github.com/YJJcoolcool/yjjcitysite</a></h4>
+		</div>
+	</footer>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
