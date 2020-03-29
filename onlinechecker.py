@@ -33,6 +33,6 @@ def pingServer():
     # offline code (I haven't figured this part out yet)
 
 while True:
-  if int(datetime.datetime.now().strftime('%S')[1])==0:
+  if int(datetime.datetime.now().strftime('%S'))==10:
     pingServer()
   
