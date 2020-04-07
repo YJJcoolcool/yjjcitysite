@@ -196,6 +196,15 @@
 			color: white;
 		}
 
+		.responded {
+			color:green;
+		}
+		.checking,.unchecked {
+			color:#FF8C00;
+		}
+		.timeout {
+			color:red;
+		}
 		
 
 	</style>
@@ -242,15 +251,16 @@
 					if (hr > 12) {out="PM"} else {out="AM"};  // add zero in front of numbers < 10
 					return out;
 				}
+		
+		
 	</script>
-	
 
 
 
 
 
 	<!--Top navigation bar-->
-	<header style="display: flex; flex-direction: row; background-color: black; color: white; font-family: Arial, Helvetica, sans-serif; font-weight: bold;">
+	<header style="display: flex; flex-direction: row; background-color: black; color: white; font-family: Arial, Helvetica, sans-serif; font-weight: bold; position: fixed; z-index: 1; width: 100%;">
 		<a href="/" style="align-self: center; margin-left: 10px;"><img src="/resources/Logo.png" width="48px" height="48px" ></a>
 		<a href="/"><h2 class="title" style="justify-self: flex-start; margin-left: 10px;"><b>YJJ City Site</b></h2></a>
 		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:15px; font-size: 25px;"><a href="https://discord.gg/FyhB9qP" target="_blank"style="color:#7289DA;">Discord</a></h2>
@@ -269,7 +279,8 @@
 			</div>
 		</div>
 	</header>
-
+	<br>
+	<br>
 	<!--Video-->
 	<div class="top-video" style="height: 90vh; background-color: black;">
 		<div style="height: 100%; overflow: hidden;">
@@ -280,7 +291,6 @@
 			  
 			<div class="content">
 				<h1 class="top-welcome"><b>Welcome to the YJJ City Site!</b></h1>
-				<h2 id="yc-ping" style="color: rgb(255, 255, 255);"></h2>
 				<h2 class="yc-time" id="yc-time" style="color: rgb(255, 255, 255);"></h2>
 				<input id="input" type="text" value="yjjcity.ddns.net" style="display: none;"/>
 				<h2 style="color: rgb(255, 255, 255);"><button onclick="copyIP()" style="background: none; text-align: left;" id="serverIP">Server IP: yjjcity.ddns.net</button><p style="font-size: 15px;">(Click to copy!)</p></h2>
@@ -384,11 +394,30 @@
 		<h2 style="font-weight: bold; color: white;">Latest Videos from YJJ City Project</h2>
 		<a href="https://www.youtube.com/channel/UCwrTn_ZR2yjRZrdtlzfYs2A" target="_blankw" style="background-color: white; display: inline; border-radius: 10px; padding:5px; font-size: 20px; color: red; align-items: center;">Visit our YouTube channel!<image src="./resources/youtubelogo.png" style="width: 30px; margin:0 5px;"/></a>
 		<div class="videos" id="youtubevids" style="width: 100%; background-color: rgb(236, 236, 236); border-radius:10px; padding: 5px 5px; display: flex; flex-direction: row; overflow: scroll; margin-top: 10px;">
-			<iframe width="560" height="315" style="margin: 5px 5px; border-radius: 15px; flex: 0 0 auto;" src="https://www.youtube.com/embed/kC25apP4nxk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			<iframe width="560" height="315" style="margin: 5px 5px; border-radius: 15px; flex: 0 0 auto;" src="https://www.youtube.com/embed/UGte3fDjyMI" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			<iframe width="560" height="315" style="margin: 5px 5px; border-radius: 15px; flex: 0 0 auto;" src="https://youtube.com/embed/5BLEuhAiVqk" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			<iframe width="560" height="315" style="margin: 5px 5px; border-radius: 15px; flex: 0 0 auto;" src="https://youtube.com/embed/_rU6AIRZgFs" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			<iframe width="560" height="315" style="margin: 5px 5px; border-radius: 15px; flex: 0 0 auto;" src="https://www.youtube.com/embed/7W_8sb8bePo" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+			<style>iframe {margin: 5px 5px; border-radius: 15px; flex: 0 0 auto;}</style>
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+			<iframe class="latestVideoEmbed" vnum='0' cid="UCwrTn_ZR2yjRZrdtlzfYs2A" width="560" height="315" frameborder="0" allowfullscreen allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+			<iframe class="latestVideoEmbed" vnum='1' cid="UCwrTn_ZR2yjRZrdtlzfYs2A" width="560" height="315" frameborder="0" allowfullscreen allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+			<iframe class="latestVideoEmbed" vnum='2' cid="UCwrTn_ZR2yjRZrdtlzfYs2A" width="560" height="315" frameborder="0" allowfullscreen allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+			<iframe class="latestVideoEmbed" vnum='3' cid="UCwrTn_ZR2yjRZrdtlzfYs2A" width="560" height="315" frameborder="0" allowfullscreen allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+			<script>
+				var reqURL = "https://api.rss2json.com/v1/api.json?rss_url=" + encodeURIComponent("https://www.youtube.com/feeds/videos.xml?channel_id=");
+				function loadVideo(iframe){
+					$.getJSON( reqURL + iframe.getAttribute('cid'),
+					function(data) {
+						var videoNumber = (iframe.getAttribute('vnum')?Number(iframe.getAttribute('vnum')):0);
+						console.log(videoNumber);
+						var link = data.items[videoNumber].link;
+						id = link.substr(link.indexOf("=") + 1);  
+						iframe.setAttribute("src","https://youtube.com/embed/"+id + "?controls=1&autoplay=0");
+					}
+				);
+				}
+				var iframes = document.getElementsByClassName('latestVideoEmbed');
+				for (var i = 0, len = iframes.length; i < len; i++){
+					loadVideo(iframes[i]);
+				}
+			</script>
 		</div>
 	</div>
 	
