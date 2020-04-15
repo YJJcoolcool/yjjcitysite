@@ -2,20 +2,29 @@
 <html lang="en">
 <head>
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
-	<title>Info - YJJ City Site</title>
+	<title>Rulebook - YJJ City Site</title>
 	<meta charset="UTF-8">
-	<meta name="description" content="YJJ City Info. Get all the info about YJJ City here!">
+	<meta name="description" content="YJJ City Rulebook. All the laws of YJJ City.">
 	<meta name="keywords" content="YJJ City,yjjcity,yjj city,yc,city,yj city,YJ City,YJJ CITY,jjy ytic,JJY YTIC,Jjy Ytic,WolvHaven,Wolvhaven,wolvhaven,yjj,yjjcoolcool,limaru,limaru city server,yjj city youtube">
 	<meta name="author" content="YJJcoolcool">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" type="image/png" href="/resources/Logo.png"/> <!--Favicon-->
     <link rel="stylesheet" type="text/css" href="/style.css"> <!--Link to CSS sheet-->
 	<style>
+        body,html {
+            width: 100%;
+            height: 100%;
+            overflow-x: hidden;
+        }
 		*{
 			font-family: Arial, Helvetica, sans-serif;
 			padding: 0;
 			margin:0;
-		}
+        }
+        
+        h1{
+            font-weight: bold;
+        }
 
 		a{
 			text-decoration: none !important;
@@ -92,7 +101,31 @@
 			header .dropdown{
 				display: none;
 			}
-		}
+        }
+
+        @media only screen and (max-height: 770px) {
+            iframe{
+                height: 500px !important;
+            }
+        }
+        
+        @media only screen and (max-height: 670px) {
+            iframe{
+                height: 400px !important;
+            }
+        }
+
+        @media only screen and (max-height: 570px) {
+            .main{
+                margin: 0 10% !important;
+            }
+            .main div{
+                width: 80% !important;
+            }
+            iframe{
+                height: 300px !important;
+            }
+        }
 
 		.main div{
 			margin-top: 10px !important;
@@ -125,29 +158,10 @@
 	<br>
 	<br>
 
-    <div class="main" style="display: flex; flex-direction: row; width: 100%; margin: 10px 10px; overflow: inherit; padding-top: 35px;">
-    <style>.main h2{font-weight: bold;} .main a{border-radius: 5px; padding: 5px 5px; margin: 3px 0px; font-size: 18px; background-color: gray; color: white; transition: background-color 0.3s;} .main a:hover{background-color: rgb(83, 83, 83);}</style>
-	<div id="col-1" style="display: flex; flex-direction: column; width: 30%;">
-		<div class="info-box" style="display: flex; flex-direction: column; background-color: rgb(240, 240, 63); border-radius: 10px; padding: 0px 15px; padding-bottom:10px;">
-			<h2>Introduction to YJJ City</h2>
-			<a href="/info/welcome">Welcome!</a>
-			<a href="/info/welcome/01">01</a>
-			<a href="/info/welcome/02">02</a>
-			<a href="/info/welcome/03">03</a>
-		</div>
-	</div>
-	<div id="col-2" style="display: flex; flex-direction: column; width: 30%;">
-		<div class="info-box" style="display: flex; flex-direction: column; background-color: lightgray; border-radius: 10px; padding: 0px 15px; padding-bottom:10px;">
-				<h2>Transport</h2>
-				<a href="/info/trainmap">Train System Map</a>
-		</div>
-	</div>
-	<div id="col-2" style="display: flex; flex-direction: column; width: 30%;">
-		<div class="info-box" style="display: flex; flex-direction: column; background-color: lightgray; border-radius: 10px; padding: 0px 15px; padding-bottom:10px;">
-				<h2>Rules & Regulations</h2>
-				<a href="/info/rulebook">YJJ City Rulebook</a>
-		</div>
-	</div>
+    <div class="main" style="display: flex; flex-direction: column; width: 100%; margin: 0 5%; overflow: inherit; padding-top: 35px;">
+        <div style="height: 100%; background-color: black; width: 90%;">
+            <iframe style="height: 600px; width: 100%; display: block;" src="https://docs.google.com/document/d/1UTJlW_EXIWigMBXPK504ef959gMXBVRHQ3fOLU9-NAU/edit?usp=sharing"></iframe>
+        </div>
     </div>
 </body>
 </html>
