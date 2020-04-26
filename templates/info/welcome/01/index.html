@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+	<title>01 - Minecraft Server Information - YJJ City Site</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="View the Train System Map of YJJ City.">
+	<meta name="keywords" content="YJJ City,yjjcity,yjj city,yc,city,yj city,YJ City,YJJ CITY,jjy ytic,JJY YTIC,Jjy Ytic,WolvHaven,Wolvhaven,wolvhaven,yjj,yjjcoolcool,limaru,limaru city server,yjj city youtube">
+	<meta name="author" content="YJJcoolcool">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="/resources/Logo.png"/> <!--Favicon-->
+    <link rel="stylesheet" type="text/css" href="/style.css"> <!--Link to CSS sheet-->
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans&display=swap" rel="stylesheet">
+	<style>
+		*{
+			font-family: Arial, Helvetica, sans-serif;
+			padding: 0;
+			margin:0;
+		}
+
+		a{
+			text-decoration: none !important;
+		}
+
+		.navi:hover{
+			font-weight: bold;
+		}
+
+		header .title{
+			color: white;
+			transition: color 0.3s;
+		}
+		header .title:hover{
+			color: yellow;
+		}
+
+		.dropbtn {
+		background-color: white;
+		color: white;
+		padding: 16px;
+		font-size: 16px;
+		border: none;
+		cursor: pointer;
+		border: none;
+		border-radius: 20%;
+		}
+
+		.dropdown {
+		position: relative;
+		display: inline-block;
+		}
+
+		.dropdown-content {
+		display: none;
+		position: absolute;
+		right: 0;
+		background-color: #4b4b4b;
+		min-width: 250px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+		}
+
+		.dropdown-content a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+		}
+
+		.dropdown-content a:hover {background-color: #272727;}
+		.dropdown:active .dropdown-content {display: block;}
+		.dropdown:active .dropbtn {background-color: lightgray;}
+
+		@media only screen and (max-width: 850px) {
+			header .navi{
+				display: none;
+			}
+            .info-box{
+                width: 90% !important;
+            }
+		}
+		@media only screen and (min-width: 850px) {
+			header .dropdown{
+				display: none;
+			}
+		}
+
+		.main div{
+			margin-top: 10px !important;
+		}
+
+	</style>
+</head>
+<body>
+    <!--Top navigation bar-->
+	<header style="display: flex; flex-direction: row; background-color: black; color: white; font-family: Arial, Helvetica, sans-serif; font-weight: bold; position: fixed; z-index: 1; width: 100%;">
+		<a href="/" style="align-self: center; margin-left: 10px;"><img src="/resources/Logo.png" width="48px" height="48px" ></a>
+		<a href="/"><h2 class="title" style="justify-self: flex-start; margin-left: 10px;"><b>YJJ City Site</b></h2></a>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:15px; font-size: 25px;"><a href="https://discord.gg/FyhB9qP" target="_blank"style="color:#7289DA; text-decoration: none;">Discord</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:120px; font-size: 25px;"><a href="/dynmap" style="color:#76F013; text-decoration: none;">Dynamic Map</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:295px; font-size: 25px;"><a href="/our-story" target="" style="color:white; text-decoration: none;">Our Story</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:430px; font-size: 25px;"><a href="/info" target="" style="color:yellow; text-decoration: none;">Info</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:500px; font-size: 25px;"><a href="/" target="" style="color:white; text-decoration: none;">Home</a></h2>
+		<div class="dropdown" style="margin-top: 10px; position:absolute; right: 15px; float:right; width:50px;">
+			<button class="dropbtn";><img style="max-width: 100%; display: block;" src="/resources/hamburger.png"></button>
+			<div class="dropdown-content" style="font-size: 20px;">
+				<a href="/" target="" style="color:white; text-decoration: none;">Home</a>
+				<a href="/info" target="" style="color:yellow; text-decoration: none;">Info</a>
+				<a href="/our-story" target="" style="color:white; text-decoration: none;">Our Story</a>
+				<a href="/dynmap" style="color:#76F013; text-decoration: none;">Dynamic Map</a>
+				<a href="https://discord.gg/FyhB9qP" target="_blank"style="color:#7289DA; text-decoration: none;">Discord</a>
+			</div>
+		</div>
+	</header>
+	<br>
+	<br>
+
+    <div class="main" style="display: flex; flex-direction: column; color: black; padding-top: 30px;">
+        <style>
+            .main h1{font-weight: bold; align-self: center; font-size: 56px;}
+			.main h2{font-weight: bold; align-self: center; font-size: 34px;}
+			.main h3{align-self: flex-start; font-size: 24px; font-family: "Open Sans",sans-serif; padding: 0 15px;}
+			.main p{align-self: flex-start; font-size: 18px; font-family: "Open Sans",sans-serif; padding:10px 10%;}
+			.main .main-point{display: flex; flex-direction: column; background-color: yellow; color: black; padding: 15px;}
+            .div-flex-row{display: flex; flex-direction: row;}
+            .div-flex-col{display: flex; flex-direction: column;}
+            .row-centre{align-self:center;}
+            .roundbox{background-color: lightgray; border-radius: 10px; padding: 5px; margin: 3px 5%;}
+            .main div{
+                align-self: flex-start;
+            }
+
+			@media only screen and (max-width: 600px) {
+				.main h1{font-size: 38px !important; padding-top:10px !important;}
+				.subtitle{padding-bottom: 30px !important;}
+				.main h2{font-size: 28px !important;}
+				.main h3{font-size: 20px !important;}
+				.main .main-point{padding: 5px !important;}
+			}
+        </style>
+        <h1 style="margin-left: 10px;">01 - Minecraft Server Information</h1>
+        <div class="row-centre div-flex-col roundbox">
+            <h3>Ok, so let's clear some basic information first.</h3>
+            <h3>Our server address is yjjcity.ddns.net (Same as the website!)</h3>
+            <h3>If you don't know how to add a server, here are the instructions.<br>1. In the Main Menu in Minecraft, click on Multiplayer.<br>2. Click on Add Server at the bottom right.<br>3. Fill in the blanks as shown in the picture below. Then click Done and it will appear on the Server List.</h3>
+            <img src="./server-address.png" style="align-self: center; width: 80%;">
+        </div>
+        <div class="row-centre div-flex-col roundbox">
+            <h3>Our server is open 24/7! But just to be sure, check our Discord to see if it is online.</h3>
+            <h3>Below is a video to show you how to check if the server is online. Here are the steps:<br><br>1. Go to #general in the YJJ City Discord<br>2. Click on the text at the top of the screen.<br>3. See the LAST PING message.<br>4. If the last ping is more than 10 minutes from the current time, the server is down.<br>(YJJ City uses Singapore General Time (GMT+8). You can check the time at the Home page of the YJJ City Site.)</h3>
+			<video autoplay muted loop id="myVideo" style="align-self: center; width: 80%;">
+				<source src="./CheckServer.mp4" type="video/mp4">
+				Your browser does not support HTML5 video.
+			</video>
+        </div>
+        <a href="/info/welcome/02" style="font-size: 30px; color: white; font-weight: bold; border-radius: 10px; padding: 4px 25px; background-color: limegreen; margin: 15px auto;">Next</a>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"/>
+	<title>Dynamic Map - YJJ City Site</title>
+	<meta charset="UTF-8">
+	<meta name="description" content="YJJ City Dynamic Map. View the map of the server in real-time!">
+	<meta name="keywords" content="YJJ City,yjjcity,yjj city,yc,city,yj city,YJ City,YJJ CITY,jjy ytic,JJY YTIC,Jjy Ytic,WolvHaven,Wolvhaven,wolvhaven,yjj,yjjcoolcool,limaru,limaru city server,yjj city youtube">
+	<meta name="author" content="YJJcoolcool">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" type="image/png" href="/resources/Logo.png"/> <!--Favicon-->
+    <link rel="stylesheet" type="text/css" href="/style.css"> <!--Link to CSS sheet-->
+	<style>
+		*{
+			font-family: Arial, Helvetica, sans-serif;
+			padding: 0;
+			margin:0;
+		}
+
+		a{
+			text-decoration: none !important;
+		}
+
+		.navi:hover{
+			font-weight: bold;
+		}
+
+		header .title{
+			color: white;
+			transition: color 0.3s;
+		}
+		header .title:hover{
+			color: yellow;
+		}
+
+		.dropbtn {
+		background-color: white;
+		color: white;
+		padding: 16px;
+		font-size: 16px;
+		border: none;
+		cursor: pointer;
+		border: none;
+		border-radius: 20%;
+		}
+
+		.dropdown {
+		position: relative;
+		display: inline-block;
+		}
+
+		.dropdown-content {
+		display: none;
+		position: absolute;
+		right: 0;
+		background-color: #4b4b4b;
+		min-width: 250px;
+		box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+		z-index: 1;
+		}
+
+		.dropdown-content a {
+		color: black;
+		padding: 12px 16px;
+		text-decoration: none;
+		display: block;
+		}
+
+		.dropdown-content a:hover {background-color: #272727;}
+		.dropdown:active .dropdown-content {display: block;}
+		.dropdown:active .dropbtn {background-color: lightgray;}
+
+		.info-box{
+			margin: 0px 10px;
+		}
+
+		@media only screen and (max-width: 850px) {
+			header .navi{
+				display: none;
+			}
+            .info-box{
+                width: 90% !important;
+            }
+			.main{
+				flex-direction: column !important;
+			}
+			#col-1,#col-2,#col-3{
+				width: 100% !important;
+			}
+		}
+		@media only screen and (min-width: 850px) {
+			header .dropdown{
+				display: none;
+			}
+		}
+        @media only screen and (max-height: 600px) {
+            iframe{
+                height: 70vh !important;
+            }
+		}
+        @media only screen and (min-height: 800px) {
+            iframe{
+                height: 85vh !important;
+            }
+		}
+
+		.main div{
+			margin-top: 10px !important;
+		}
+
+        button{
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 20px;
+            margin: 10px 5px;
+            border: black 2px solid;
+            border-radius: 10px;
+            padding: 5px;
+            flex: 0 0 auto;
+        }
+
+        button:focus{
+            outline: none;
+        }
+
+        .buttons::-webkit-scrollbar { height: 0 !important }
+
+	</style>
+	<script data-ad-client="ca-pub-3072463091965275" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+</head>
+<body style="overflow:hidden">
+    <!--Top navigation bar-->
+	<header style="display: flex; flex-direction: row; flex-wrap: none; background-color: black; color: white; font-family: Arial, Helvetica, sans-serif; font-weight: bold; position: fixed; z-index: 1; width: 100%;">
+		<a href="/" style="align-self: center; margin-left: 10px;"><img src="/resources/Logo.png" width="48px" height="48px" ></a>
+		<a href="/"><h2 class="title" style="justify-self: flex-start; margin-left: 10px;"><b>YJJ City Site</b></h2></a>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:15px; font-size: 25px;"><a href="https://discord.gg/FyhB9qP" target="_blank"style="color:#7289DA;">Discord</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:120px; font-size: 25px;"><a href="/dynmap" style="color:yellow;">Dynamic Map</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:295px; font-size: 25px;"><a href="/our-story" target="" style="color:white;">Our Story</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:430px; font-size: 25px;"><a href="/info" target="" style="color:white;">Info</a></h2>
+		<h2 class="navi" style="justify-self: flex-start; position: absolute; right:500px; font-size: 25px;"><a href="/" target="" style="color:white;">Home</a></h2>
+		<div class="dropdown" style="margin-top: 10px; position:absolute; right: 15px; float:right; width:50px;">
+			<button class="dropbtn";><img style="max-width: 100%; display: block;" src="/resources/hamburger.png"></button>
+			<div class="dropdown-content" style="font-size: 20px;">
+				<a href="/" target="" style="color:white;">Home</a>
+				<a href="/info" target="" style="color:white;">Info</a>
+				<a href="/our-story/" target="" style="color:white;">Our Story</a>
+				<a href="/dynmap" style="color:yellow;">Dynamic Map</a>
+				<a href="https://discord.gg/FyhB9qP" target="_blank"style="color:#7289DA;">Discord</a>
+			</div>
+		</div>
+	</header>
+	<br>
+	<br>
+
+    <div class="buttons" style="position: relative; display: flex; flex-direction: row; overflow: scroll; flex-wrap: none; overflow-x: scroll; width:100%; padding-top: 35px;">
+        <button style="background-color:lightgreen;" onclick="launchtab()">Launch in a new tab</button>
+        <button id="livemapbutton" onclick="livemaptab()" style="background-color: lightgray;">Live Map</button>
+        <button id="livemapNoGUIbutton" onclick="livemaptabNoGUI()">Live Map (Flat, No GUI)</button>
+        <button id="livemap3DNoGUIbutton" onclick="livemaptab3DNoGUI()">Live Map (3D, No GUI)</button>
+        <button id="history" onclick="history()">History</button>
+    </div>
+    <script>
+        function launchtab(){
+            window.open('http://yjjcity.ddns.net:8123', '_blank');
+        }
+        function livemaptab() {
+            document.getElementById("mapdiv").innerHTML = '<iframe src="http://yjjcity.ddns.net:8123/?zoom=1" frameborder="0" style="overflow:hidden;height:80vh;width:100%"></iframe>';
+            document.getElementById("mapdiv").style.display = "";
+            document.getElementById("historydiv").style.display = "none";
+            document.getElementById("livemapbutton").style.backgroundColor = "lightgray";
+            document.getElementById("livemapNoGUIbutton").style.backgroundColor = "white";
+            document.getElementById("livemap3DNoGUIbutton").style.backgroundColor = "white";
+            document.getElementById("history").style.backgroundColor = "white";
+        }
+        function livemaptabNoGUI() {
+            document.getElementById("mapdiv").innerHTML = '<iframe src="http://yjjcity.ddns.net:8123/?zoom=1&nogui=true" frameborder="0" style="overflow:hidden;height:80vh;width:100%"></iframe>';
+            document.getElementById("mapdiv").style.display = "";
+            document.getElementById("historydiv").style.display = "none";
+            document.getElementById("livemapbutton").style.backgroundColor = "white";
+            document.getElementById("livemapNoGUIbutton").style.backgroundColor = "lightgray";
+            document.getElementById("livemap3DNoGUIbutton").style.backgroundColor = "white";
+            document.getElementById("history").style.backgroundColor = "white";
+        }
+        function livemaptab3DNoGUI() {
+            document.getElementById("mapdiv").innerHTML = '<iframe src="http://yjjcity.ddns.net:8123/?mapname=surface&zoom=1&nogui=true" frameborder="0" style="overflow:hidden;height:80vh;width:100%"></iframe>';
+            document.getElementById("mapdiv").style.display = "";
+            document.getElementById("historydiv").style.display = "none";
+            document.getElementById("livemapbutton").style.backgroundColor = "white";
+            document.getElementById("livemapNoGUIbutton").style.backgroundColor = "white";
+            document.getElementById("livemap3DNoGUIbutton").style.backgroundColor = "lightgray";
+            document.getElementById("history").style.backgroundColor = "white";
+        }
+        function history() {
+            document.getElementById("mapdiv").style.display = "none";
+            document.getElementById("historydiv").style.display = "";
+            document.getElementById("livemapbutton").style.backgroundColor = "white";
+            document.getElementById("livemapNoGUIbutton").style.backgroundColor = "white";
+            document.getElementById("livemap3DNoGUIbutton").style.backgroundColor = "white";
+            document.getElementById("history").style.backgroundColor = "lightgray";
+        }
+    </script>
+    <div id="mapdiv" style="margin:0px;padding:0px;overflow:hidden; background-color: black;">
+        <iframe src="http://yjjcity.ddns.net:8123/?zoom=1" frameborder="0" style="overflow:hidden;height:80vh;width:100%"></iframe>
+    </div>
+    <div id="historydiv">
+        <h2>This page is under construction.</h2>
+    </div>
+</body>
