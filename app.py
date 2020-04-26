@@ -34,10 +34,6 @@ def welcome02():
 def welcome03():
     return render_template('/info/welcome/03/index.html')
 
-@app.route("/info/welcome")
-def welcome():
-    return render_template('/info/welcome/index.html')
-
 @app.route("/dynmap")
 def dynmap():
     return render_template('/dynmap/index.html')
